@@ -26,6 +26,7 @@ const Home = () => {
         </div>
         {/* <div className="home-img-sec">
           <div className="img-div"></div>
+            <div className="img-div-border"></div>
         </div> */}
 
       </div>

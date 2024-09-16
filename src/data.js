@@ -10,9 +10,11 @@ import tailwind from '/tailwind.png';
 import express from '/express.png';
 
 
-import portfolio from '/portfolio.png'
-import restaurant from '/restaurant.png'
-import architecture from '/architecture.png'
+import portfolio from '/portfolio.png';
+import restaurant from '/restaurant.png';
+import architecture from '/architecture.png';
+
+
 
 export const skillData = [
     {

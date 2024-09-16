@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <ul className="logoSec navSec">
-          <li className="logo">Logo</li>
+          <li className="logo">Anamika.</li>
         </ul>
         <ul className="itemSec navSec">
           <li className="nav-item"><a href='#Home'>Home</a></li>

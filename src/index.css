@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --btn-color: #1a5319;
+  --btn-color: white;
+  --container-bg: #1c1c1c;
+  --text-color: white;
+  --navbar-bg: white;
+
+  /* --btn-color: #1a5319;
   --container-bg: #d6efd8;
   --text-color: #25395c;
-  --navbar-bg: #508d4e;
+  --navbar-bg: #508d4e; */
 }
 
 * {
@@ -30,13 +35,14 @@ body {
 .navbar {
   height: 80px;
   width: 100vw;
-  background: var(--navbar-bg);
+  /* background: var(--navbar-bg); */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   position: fixed;
   z-index: 3;
+  backdrop-filter: blur(20px);
 }
 
 ul li {
@@ -53,8 +59,7 @@ li a {
 }
 
 /* Hover effects on list items */
-li a:hover,
-.btn:hover {
+li a:hover {
   background: white;
   color: black;
   font-weight: 600;
@@ -85,11 +90,12 @@ li a:hover,
   position: absolute;
   right: 66px;
   top: -12px;
+  z-index: 10;
 }
 
 .smallScreenNav .smallScreenList {
   height: 100vh;
-  gap: 23px;
+  gap: 40px;
   width: 100vw;
   /* background: black;
   color: black; */
@@ -128,14 +134,15 @@ li a:hover,
 
 /* Text section of Home container */
 .text-sec {
-  width: 70%;
+  width: 50%;
   /* background-color: yellow; */
   height: 70vh;
   position: relative;
   /* margin-inline: auto; */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  /* justify-content: center; */
   font-size: 1.8rem;
   margin-top: 30px;
 }
@@ -143,7 +150,7 @@ li a:hover,
 /* Img Section of Home container */
 
 .home-img-sec {
-  width: 30%;
+  /* width: 30%; */
   position: relative;
   /* background: green; */
   height: 70vh;
@@ -157,8 +164,24 @@ li a:hover,
 .img-div {
   height: 477px;
   width: 332px;
-  background: black;
+  background: white;
+  position: sticky;
   border-radius: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* .img-div::before { */
+.img-div-border {
+  /* content: ''; */
+  height: 104%;
+  width: 110%;
+  background: radial-gradient(#fdf700, #1c1c1c,#fdf700, #1c1c1c,#fdf700, #1c1c1c,#fdf700, #1c1c1c,#fdf700,#1c1c1c);
+  border-radius: 100%;
+  position: absolute;
+  left: -16px;
+  top: -11px;
+  z-index: 0;
 }
 
 .text {
@@ -167,20 +190,28 @@ li a:hover,
 }
 
 .btn {
-  height: 60px;
-  width: 130px;
-  background: var(--navbar-bg);
-  color: white;
+  height: 47px;
+  width: 128px;
+  /* background: var(--navbar-bg); */
+  background: var(--container-bg);
+  color: white !important;
+  border: 2px solid #fdf700;
+  box-shadow: 5px 2px 7px 0px #fdf700;
   border-radius: 9px;
-  border: none;
+  /* border: none; */
   outline: none;
   font-size: 1rem;
   margin-top: 30px;
   transition: all 0.2s ease;
   font-weight: 600;
 }
-.text-color{
-  color: var(--btn-color);
+.btn:hover {
+  box-shadow: none;
+  transform: translateX(2px) translateY(1px);
+}
+.text-color {
+  /* color: var(--btn-color); */
+  color: #fdf700;
 }
 
 /* About Section */
@@ -201,7 +232,7 @@ li a:hover,
   height: 3px;
   width: 90%;
   position: relative;
-  background: #000;
+  background: #fdf700;
 
   bottom: 0;
   left: 0;
@@ -282,7 +313,7 @@ li a:hover,
 
 .skills-section {
   margin: 20px 0px;
-  min-height: 480px;
+  min-height: 350px;
   width: 70%;
   position: relative;
   /* background: #000; */
@@ -291,7 +322,7 @@ li a:hover,
   justify-content: center;
   align-items: center;
   display: flex;
-  gap: 70px;
+  gap: 10px;
 }
 
 .skill-card {
@@ -300,15 +331,21 @@ li a:hover,
   /* background: #ffff; */
   display: flex;
   align-items: center;
+  transition: all 0.2s ease;
   justify-content: center;
 }
 
 .skill-img {
-  height: 100%;
+  height: 70%;
+  transition: all 0.2s ease;
   position: relative;
-  width: 100%;
+  width: auto;
+  border-radius: 30px;
 }
 
+.skill-img:hover {
+  transform: scaleY(1.2) scaleX(1.2);
+}
 /* Portfolio Section */
 
 .portfolio {
@@ -400,6 +437,7 @@ form {
   width: 100%;
   position: relative;
 } */
+
 .form-div form input {
   width: 66vw;
   height: 80px;
@@ -431,13 +469,14 @@ form textarea.message::placeholder {
 
 form input.input,
 form textarea.message {
-  color: black;
-  border: 2px solid black;
+  color: white;
+  border: 2px solid white;
   background: none;
 }
 
-input.input::placeholder {
-  color: black;
+input.input::placeholder,
+form textarea.message::placeholder {
+  color: white;
 }
 
 label {
@@ -460,7 +499,11 @@ label {
 }
 
 .submit {
-  width: 80%;
+  width: 85%;
+}
+.submit:hover {
+  background: #bcb926;
+  color: black !important;
 }
 
 /* Footer */
@@ -516,9 +559,10 @@ input:focus {
 /*  */
 
 @media only screen and (max-width: 750px) {
-  /* .container{
-    flex-wrap: wrap;
-  } */
+  #Home {
+    flex-direction: column-reverse;
+    gap: 80px;
+  }
   .nav-item {
     display: none;
   }
@@ -528,7 +572,7 @@ input:focus {
   }
 
   .mainHeading {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
   .heading {
     font-size: 1.5rem;
@@ -542,4 +586,28 @@ input:focus {
   .footer-item-sec {
     margin-right: 20px;
   }
+  .home-img-sec {
+    margin-top: 90px;
+  }
+  .text-sec {
+    margin: 180px 0px;
+  }
+  .contact-sub-heading {
+    font-size: 1.6rem;
+  }
 }
+
+body {
+  color: white;
+}
+
+.btn {
+  color: black;
+}
+form input {
+  border: 3px solid white;
+}
+
+/* input::placeholder{
+  color: white;
+} */
